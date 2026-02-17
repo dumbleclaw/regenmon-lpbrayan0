@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regenmon - Tu Compañero Virtual</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Press Start 2P', monospace;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .nes-container {
+            background: white;
+            border: 4px solid #212529;
+            padding: 1rem;
+            margin: 1rem;
+        }
+        .nes-btn {
+            border: 4px solid #212529;
+            background: #fff;
+            color: #212529;
+            padding: 0.75rem 1rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.1s;
+        }
+        .nes-btn:hover {
+            transform: translate(2px, 2px);
+        }
+        .regenmon-sprite {
+            width: 120px;
+            height: 120px;
+            border: 4px solid #212529;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="nes-container text-center max-w-md">
+            <h1 class="text-2xl mb-6">Regenmon</h1>
+            <div class="text-6xl mb-6">🌱💧✨</div>
+            <p class="mb-6 text-sm leading-relaxed">
+                Cuida y entrena a tu Regenmon digital
+            </p>
+            <div class="mb-4">
+                <div class="text-lg mb-2">🍊 — $FRUTA</div>
+                <p class="text-xs">Implementación completa de Session 3 (S3)</p>
+            </div>
+            <div class="mb-4 text-xs">
+                <p>✅ Auth con Privy (Google + Email)</p>
+                <p>✅ Sistema de monedas $FRUTA</p>
+                <p>✅ 3 tipos: Semilla 🌱, Gota 💧, Chispa ✨</p>
+                <p>✅ Chat con OpenAI GPT-4o-mini</p>
+                <p>✅ Persistencia por usuario</p>
+            </div>
+            <div class="text-xs text-gray-600 mt-4">
+                <p>Build en progreso - Deploy temporal</p>
+                <p>Versión completa próximamente</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
