@@ -4,6 +4,14 @@ const nextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true
+  },
+  webpack: (config) => {
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      pino: false,
+      'pino-pretty': false,
+    };
+    return config;
   }
 }
 

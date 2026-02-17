@@ -98,9 +98,10 @@ export default function Home() {
   };
 
   const performAction = (action: 'feed' | 'play' | 'train') => {
-    const actions = {
+    const actions: Record<string, { felicidad: number; energia: number; hambre: number; xp: number; coins: number }> = {
       feed: {
         felicidad: Math.min(100, regenmon.stats.felicidad + 15),
+        energia: regenmon.stats.energia,
         hambre: Math.max(0, regenmon.stats.hambre - 20),
         xp: regenmon.xp + 5,
         coins: regenmon.coins + 2,
@@ -108,14 +109,16 @@ export default function Home() {
       play: {
         felicidad: Math.min(100, regenmon.stats.felicidad + 20),
         energia: Math.max(0, regenmon.stats.energia - 10),
+        hambre: regenmon.stats.hambre,
         xp: regenmon.xp + 8,
         coins: regenmon.coins + 3,
       },
       train: {
+        felicidad: regenmon.stats.felicidad,
         energia: Math.max(0, regenmon.stats.energia - 15),
+        hambre: Math.min(100, regenmon.stats.hambre + 10),
         xp: regenmon.xp + 15,
         coins: regenmon.coins + 5,
-        hambre: Math.min(100, regenmon.stats.hambre + 10),
       },
     };
 
@@ -125,9 +128,9 @@ export default function Home() {
 
     updateStats({
       stats: {
-        felicidad: actionData.felicidad ?? regenmon.stats.felicidad,
-        energia: actionData.energia ?? regenmon.stats.energia,
-        hambre: actionData.hambre ?? regenmon.stats.hambre,
+        felicidad: actionData.felicidad,
+        energia: actionData.energia,
+        hambre: actionData.hambre,
       },
       xp: actionData.xp,
       coins: actionData.coins,
@@ -296,7 +299,7 @@ export default function Home() {
       {/* Header */}
       <div className="flex justify-between items-center mb-4 flex-wrap gap-2">
         <div className="text-sm">
-          {user?.email || user?.google?.email || 'Usuario'}
+          {(user?.email?.address ?? user?.google?.email ?? 'Usuario') as string}
         </div>
         <div className="flex items-center space-x-4">
           <div className="text-lg">🍊 {regenmon.coins} $FRUTA</div>

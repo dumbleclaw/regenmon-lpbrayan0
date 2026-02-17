@@ -17,9 +17,6 @@ export default function PrivyWrapper({ children }: PrivyWrapperProps) {
           theme: 'light',
           accentColor: '#676FFF',
         },
-        embeddedWallets: {
-          createOnLogin: 'off',
-        },
       }}
     >
       {children}
